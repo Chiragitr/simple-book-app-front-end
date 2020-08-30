@@ -1,0 +1,34 @@
+<!-- <div class="row">
+  <div class="col-xs-12" *ngFor="let book of books">
+    {{ book.id }} {{ book.book_name }} {{book.year_published}}
+  </div>
+</div> -->
+<div class="row">
+  <div class="col-md-2">
+    <button class="btn btn-success" (click)="onAddNewBook()">Add Book</button>
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-info" (click)="onSort()">Sort</button>
+  </div>
+  <app-sort *ngIf="sortComponentFlag" (close)="onHandle()"></app-sort>
+</div>
+<hr>
+<div class="row" style="font-weight: bold;">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-3">Book Name</div>
+      <div class="col-md-3">Author Name</div>
+      <div class="col-md-3">Year</div>
+      <div class="col-md-3">Price(₹)</div>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <app-books-item *ngFor="let book of books | paginate:config ; let i = index" [book]="book"></app-books-item>
+  </div>
+</div>
+<div class="row">
+  <pagination-controls style="margin-top:16px" (pageChange)="pageChanged($event)"></pagination-controls>
+</div>

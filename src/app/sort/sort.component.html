@@ -1,0 +1,25 @@
+<div class="backdrop" (click)="onClose()"></div>
+
+<div class="alert-box">
+  <button class="btn btn-info" style="margin-right: 28px;" type="button" (click)="sort('price')">Sort By Price</button>
+  <button class="btn btn-info" type="button" (click)="sort('year_published')">Sort By Year</button>
+
+
+  <div class="row">
+    <div class="col-md-3" style="font-weight: bold;">book Name</div>
+    <div class="col-md-3" style="font-weight: bold;">author Name</div>
+    <div class="col-md-3" style="font-weight: bold;">year Published</div>
+    <div class="col-md-3" style="font-weight: bold;">price(₹)</div>
+  </div>
+  <div class="row" *ngFor="let book of books | paginate:config">
+    <div class="col-md-3">{{book.book_name}}</div>
+    <div class="col-md-3">{{book.author_name}}</div>
+    <div class="col-md-3">{{book.year_published}}</div>
+    <div class="col-md-3">₹{{book.price}}</div>
+  </div>
+
+  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+  <div class="alert-box-actions">
+    <button class="btn btn-danger" (click)="onClose()">Close</button>
+  </div>
+</div>

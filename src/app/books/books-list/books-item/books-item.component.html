@@ -1,0 +1,74 @@
+<!--<div class="row">
+<tr>
+  <td>
+    {{book.book_name}}
+  </td>
+  <td>
+    {{book.author_name}}
+  </td>
+  <td>
+    {{book.year_published}}
+  </td>
+  <td>
+    {{book.price}}
+  </td>
+</tr>
+</div> -->
+<!--
+
+<div class="row list-group-item clearfix" style="cursor: pointer;" [routerLink]="book.id" routerLinkActive="active">
+<div class="row">
+  <div class="col-md-3">
+    {{book.book_name}}
+  </div>
+  <div class="col-md-3">
+    {{book.author_name}}
+  </div>
+  <div class="col-md-1">
+    {{book.year_published}}
+  </div>
+  <div class="col-md-1">
+    {{book.price}}
+  </div>
+  <div class="col-md-1">
+    <button type="button" class="btn btn-primary" [routerLink]='[book.id,"edit"]'>update</button>
+  </div>
+    <button type="button" class="btn btn-danger" (click)="onDelete(book.id)">delete</button>
+</div>
+
+</div> -->
+<!-- <div class="row">
+  <button type="button" [routerLink]='[book.id,"edit"]'>update</button>
+  <button type="button" (click)="onDelete(book.id)">delete</button>
+</div> -->
+
+  <!-- <button type="button" style="margin-left: 300px;" (click)="onDelete(book.id)">delete</button>  -->
+<!--  <span class="pull-right">
+    <img [src]="recipe.imagePath" alt="" class="img-responsive" style="max-height: 50px;">
+  </span> -->
+<!-- </div> -->
+
+
+<div class="row">
+  <div class="col-md-8 row list-group-item clearfix" style="cursor: pointer; margin-left: auto;" [routerLink]="book.id" routerLinkActive="active">
+    <div class="row">
+    <div class="col-md-3">{{book.book_name}}</div>
+    <div class="col-md-3">{{book.author_name}}</div>
+    <div class="col-md-3">{{book.year_published}}</div>
+    <div class="col-md-3">₹{{book.price}}</div>
+  </div>
+  </div>
+  <div class="col-md-4">
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+    <div class="col-md-5">
+      <button type="button" class="btn btn-primary" [routerLink]='[book.id,"edit"]'>update</button>
+    </div>
+    <div class="col-md-5">
+      <button type="button" class="btn btn-danger" (click)="onDelete(book.id)">delete</button>
+    </div>
+  </div>
+  </div>
+</div>
+
